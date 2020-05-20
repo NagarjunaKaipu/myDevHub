@@ -1,0 +1,89 @@
+<apex:page >
+  <!-- Begin Default Content -->
+  <h1>Congratulations!</h1>
+  This is your sample page.
+  <!-- End Default Content -->
+<html>
+<head>
+   <!-- Imports Open CTI JavaScript library. Point to a valid Salesforce domain.
+-->
+   <script src="https://domain:port/support/api/48.0/lightning/opencti_min.js"></script>
+   <script type="text/javascript">
+      // Callback of API method: setSoftphonePanelHeight
+      var setSoftphonePanelHeightCallback = function(response) {
+            // Returns true if setSoftphonePanelHeight method is executed successfully, false otherwise
+            if (response.result) {
+               alert('setSoftphonePanelHeight is successfully executed.');
+            } 
+            else {
+               alert('setSoftphonePanelHeight failed.);
+            }
+      };
+      // Invokes API method: setSoftphonePanelHeight
+      function setSoftphonePanelHeight() {
+         sforce.opencti.setSoftphonePanelHeight({
+            heightPX: 500,
+            callback: setSoftphonePanelHeightCallback
+         });
+      }
+      // Callback of API method: setSoftphonePanelWidth
+      var setSoftphonePanelWidthCallback = function(response) {
+            // Returns true if setSoftphonePanelWidth method is executed successfully, false otherwise
+            if (response.result) {
+               alert('setSoftphonePanelWidth is successfully executed.');
+            } 
+            else {
+               alert('setSoftphonePanelWidth failed.');
+            }
+      };
+      // Invokes API method: setSoftphonePanelWidth
+      function setSoftphonePanelWidth() {
+         sforce.opencti.setSoftphonePanelWidth({
+            widthPX: 500,
+            callback: setSoftphonePanelHeightCallback
+         });
+      }
+      // Callback of API method: setSoftphoneItemIcon
+      var setSoftphoneItemIconCallback = function(response) {
+            // Returns true if setSoftphoneItemIcon method is executed successfully, false otherwise
+            if (response.result) {
+               alert('setSoftphoneItemIcon is successfully executed.');
+            } 
+            else {
+               alert('setSoftphoneItemIcon failed.');
+            }
+      };
+      // Invokes API method: setSoftphoneItemIcon
+      function setSoftphoneItemIcon() {
+         sforce.opencti.setSoftphoneItemIcon({
+            key: 'call',
+            callback: setSoftphoneItemIconCallback
+         });
+      }
+      // Callback of API method: setSoftphoneItemLabel
+      var setSoftphoneItemLabelCallback = function(response) {
+            // Returns true if setSoftphoneItemLabel method is executed successfully, false otherwise
+            if (response.result) {
+               alert('setSoftphoneItemLabel is successfully executed.');
+            } 
+            else {
+               alert('setSoftphoneItemLabel failed.');
+            }
+      };
+      // Invokes API method: setSoftphoneItemLabel
+      function setSoftphoneItemLabel() {
+         sforce.opencti.setSoftphoneItemLabel({
+            Label: 'MySoftphone',
+            callback: setSoftphoneItemLabelCallback
+         });
+      }
+   </script>
+</head>
+<body>
+   <button onclick="setSoftphonePanelHeight();">setSoftphonePanelHeight({heightPX:500})</button><br/>
+   <button onclick="setSoftphonePanelWidth();">setSoftphonePanelWidth({widthPX:500})</button><br/>
+   <button onclick="setSoftphoneItemIcon();">setSoftphoneItemIcon({key:'call'})</button><br/>
+   <button onclick="setSoftphoneItemLabel();">setSoftphoneItemLabel({label:'MySoftphone'})</button>
+</body>
+</html>
+</apex:page>
